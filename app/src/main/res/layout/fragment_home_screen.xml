@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/white"
+    tools:context=".fragment.HomeScreenFragment">
+
+    <androidx.drawerlayout.widget.DrawerLayout
+        android:id="@+id/home_screen_drawer_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true"
+        android:background="@color/white"
+        tools:openDrawer="start">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:background="@color/theme_background"
+                android:id="@+id/action_bar"
+                android:gravity="center_vertical"
+                android:layout_width="match_parent"
+                android:layout_height="60dp">
+
+                <ImageView
+                    android:id="@+id/hamburger_icon"
+                    android:layout_marginStart="15dp"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:src="@drawable/va_baseline_dehaze_24"/>
+
+                <ImageView
+                    android:layout_marginStart="15dp"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:src="@drawable/ic_baseline_location_on_24"/>
+
+                <Spinner
+                    android:id="@+id/spinner_city_select"
+                    android:layout_width="180dp"
+                    android:layout_height="wrap_content"
+                    android:popupBackground="@color/theme_background"
+                    android:backgroundTint="@color/extra_light_grey" />
+            </LinearLayout>
+
+            <ScrollView
+                android:background="@color/theme_background"
+                android:scrollbars="none"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:background="@drawable/home_screen_background"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/recommended_movies"
+                        android:visibility="invisible"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="20sp"
+                        android:layout_marginStart="10dp"
+                        android:paddingTop="8dp"
+                        android:paddingBottom="2dp"
+                        android:textColor="@color/extra_dark_grey"
+                        android:textStyle="bold"
+                        android:text="Recommended Movies"/>
+
+                    <ScrollView
+                        android:scrollbars="none"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:id="@+id/movie_list_recycler_view"
+                            tools:listitem="@layout/custom_movie_card"/>
+                    </ScrollView>
+
+                    <TextView
+                        android:id="@+id/recommended_shows"
+                        android:visibility="invisible"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="20sp"
+                        android:layout_marginStart="10dp"
+                        android:paddingTop="8dp"
+                        android:paddingBottom="2dp"
+                        android:textColor="@color/extra_dark_grey"
+                        android:textStyle="bold"
+                        android:text="Recommended Shows"/>
+
+                    <ScrollView
+                        android:scrollbars="none"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:id="@+id/event_list_recycler_view"
+                            tools:listitem="@layout/custom_event_card"/>
+                    </ScrollView>
+
+                    <TextView
+                        android:id="@+id/upcoming_movies"
+                        android:visibility="invisible"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="20sp"
+                        android:layout_marginStart="10dp"
+                        android:paddingTop="8dp"
+                        android:paddingBottom="2dp"
+                        android:textColor="@color/extra_dark_grey"
+                        android:textStyle="bold"
+                        android:text="Upcoming Movies"/>
+
+                    <ScrollView
+                        android:scrollbars="none"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:id="@+id/upcoming_movie_list_recycler_view"
+                            tools:listitem="@layout/custom_upcoming_movie_card"/>
+
+                    </ScrollView>
+
+                </LinearLayout>
+
+            </ScrollView>
+
+        </LinearLayout>
+
+        <com.google.android.material.navigation.NavigationView
+            android:id="@+id/navigationView"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="start"
+            android:fitsSystemWindows="true"
+            app:headerLayout="@layout/home_screen_header"
+            app:menu="@menu/home_screen_drawer"/>
+
+    </androidx.drawerlayout.widget.DrawerLayout>
+
+</FrameLayout>

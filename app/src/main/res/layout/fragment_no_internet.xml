@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/theme_background"
+    tools:context=".fragment.NoInternetFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_marginTop="100dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="100dp"
+            android:adjustViewBounds="true"
+            android:src="@drawable/no_network" />
+
+        <TextView
+            android:layout_marginTop="25dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/no_internet"
+            android:textColor="@color/extra_light_grey"
+            android:textSize="25sp"
+            android:gravity="center_horizontal"/>
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            android:visibility="invisible"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="20dp"
+            android:indeterminate="true"
+            android:indeterminateTintMode="src_atop"
+            android:indeterminateTint="@color/extra_light_grey"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/retry"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="RETRY"
+            android:textSize="20sp"
+            android:textColor="@color/extra_light_grey"
+            android:layout_marginHorizontal="40dp"
+            android:background="@drawable/button_retry"
+            android:layout_marginTop="25dp"/>
+
+    </LinearLayout>
+
+</FrameLayout>

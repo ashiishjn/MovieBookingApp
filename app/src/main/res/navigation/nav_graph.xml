@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/userSignInFragment">
+
+    <fragment
+        android:id="@+id/userSignInFragment"
+        android:name="com.example.moviebookingapp.fragment.UserSignInFragment"
+        android:label="fragment_user_sign_in"
+        tools:layout="@layout/fragment_user_sign_in" >
+        <action
+            android:id="@+id/action_userSignInFragment_to_userSignUpFragment"
+            app:destination="@id/userSignUpFragment"
+            app:popUpTo="@id/userSignInFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_userSignInFragment_to_homeScreenFragment"
+            app:destination="@id/homeScreenFragment"
+            app:popUpTo="@id/userSignInFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_userSignInFragment_to_forgotPasswordFragment"
+            app:destination="@id/forgotPasswordFragment" />
+        <action
+            android:id="@+id/action_userSignInFragment_to_noInternetFragment"
+            app:destination="@id/noInternetFragment"
+            app:popUpTo="@id/userSignInFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/userSignUpFragment"
+        android:name="com.example.moviebookingapp.fragment.UserSignUpFragment"
+        android:label="fragment_user_sign_up"
+        tools:layout="@layout/fragment_user_sign_up" >
+        <action
+            android:id="@+id/action_userSignUpFragment_to_homeScreenFragment"
+            app:destination="@id/homeScreenFragment"
+            app:popUpTo="@id/userSignUpFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_userSignUpFragment_to_userSignInFragment"
+            app:destination="@id/userSignInFragment"
+            app:popUpTo="@id/userSignUpFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_userSignUpFragment_to_noInternetFragment"
+            app:destination="@id/noInternetFragment"
+            app:popUpTo="@id/userSignUpFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/homeScreenFragment"
+        android:name="com.example.moviebookingapp.fragment.HomeScreenFragment"
+        android:label="fragment_home_screen"
+        tools:layout="@layout/fragment_home_screen" >
+        <action
+            android:id="@+id/action_homeScreenFragment_to_movieDescriptionFragment"
+            app:destination="@id/movieDescriptionFragment" />
+        <action
+            android:id="@+id/action_homeScreenFragment_to_purchaseHistoryFragment"
+            app:destination="@id/purchaseHistoryFragment" />
+        <action
+            android:id="@+id/action_homeScreenFragment_to_userSignInFragment"
+            app:destination="@id/userSignInFragment"
+            app:popUpTo="@id/homeScreenFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_homeScreenFragment_to_upcomingMovieDescriptionFragment"
+            app:destination="@id/upcomingMovieDescriptionFragment" />
+        <action
+            android:id="@+id/action_homeScreenFragment_to_eventBookingFragment"
+            app:destination="@id/eventBookingFragment" />
+        <action
+            android:id="@+id/action_homeScreenFragment_to_profileFragment"
+            app:destination="@id/profileFragment" />
+        <action
+            android:id="@+id/action_homeScreenFragment_to_noInternetFragment"
+            app:destination="@id/noInternetFragment"
+            app:popUpTo="@id/homeScreenFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/movieDescriptionFragment"
+        android:name="com.example.moviebookingapp.fragment.MovieDescriptionFragment"
+        android:label="fragment_movie_description"
+        tools:layout="@layout/fragment_movie_description" >
+        <action
+            android:id="@+id/action_movieDescriptionFragment_to_theatreSelectionFragment"
+            app:destination="@id/theatreSelectionFragment" />
+        <action
+            android:id="@+id/action_movieDescriptionFragment_to_homeScreenFragment"
+            app:destination="@id/homeScreenFragment"
+            app:popUpTo="@id/homeScreenFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/theatreSelectionFragment"
+        android:name="com.example.moviebookingapp.fragment.TheatreSelectionFragment"
+        android:label="fragment_theatre_selection"
+        tools:layout="@layout/fragment_theatre_selection" >
+        <action
+            android:id="@+id/action_theatreSelectionFragment_to_seatSelectionFragment"
+            app:destination="@id/seatSelectionFragment" />
+        <action
+            android:id="@+id/action_theatreSelectionFragment_to_movieDescriptionFragment"
+            app:destination="@id/movieDescriptionFragment"
+            app:popUpTo="@id/movieDescriptionFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/seatSelectionFragment"
+        android:name="com.example.moviebookingapp.fragment.SeatSelectionFragment"
+        android:label="fragment_seat_selection"
+        tools:layout="@layout/fragment_seat_selection" >
+        <action
+            android:id="@+id/action_seatSelectionFragment_to_confirmationScreenFragment"
+            app:destination="@id/confirmationScreenFragment"
+            app:popUpTo="@id/homeScreenFragment" />
+        <action
+            android:id="@+id/action_seatSelectionFragment_to_theatreSelectionFragment"
+            app:destination="@id/theatreSelectionFragment"
+            app:popUpTo="@id/theatreSelectionFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_seatSelectionFragment_to_noInternetFragment"
+            app:destination="@id/noInternetFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/purchaseHistoryFragment"
+        android:name="com.example.moviebookingapp.fragment.PurchaseHistoryFragment"
+        android:label="fragment_purchase_history"
+        tools:layout="@layout/fragment_purchase_history" >
+        <action
+            android:id="@+id/action_purchaseHistoryFragment_to_homeScreenFragment"
+            app:destination="@id/homeScreenFragment"
+            app:popUpTo="@id/homeScreenFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/confirmationScreenFragment"
+        android:name="com.example.moviebookingapp.fragment.ConfirmationScreenFragment"
+        android:label="fragment_confirmation_screen"
+        tools:layout="@layout/fragment_confirmation_screen" >
+        <action
+            android:id="@+id/action_confirmationScreenFragment_to_homeScreenFragment"
+            app:destination="@id/homeScreenFragment"
+            app:popUpTo="@id/homeScreenFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/forgotPasswordFragment"
+        android:name="com.example.moviebookingapp.fragment.ForgotPasswordFragment"
+        android:label="fragment_forgot_password"
+        tools:layout="@layout/fragment_forgot_password" >
+        <action
+            android:id="@+id/action_forgotPasswordFragment_to_userSignInFragment"
+            app:destination="@id/userSignInFragment"
+            app:popUpTo="@id/userSignInFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_forgotPasswordFragment_to_noInternetFragment"
+            app:destination="@id/noInternetFragment"
+            app:popUpTo="@id/forgotPasswordFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/upcomingMovieDescriptionFragment"
+        android:name="com.example.moviebookingapp.fragment.UpcomingMovieDescriptionFragment"
+        android:label="UpcomingMovieDescriptionFragment" >
+        <action
+            android:id="@+id/action_upcomingMovieDescriptionFragment_to_homeScreenFragment"
+            app:destination="@id/homeScreenFragment"
+            app:popUpTo="@id/homeScreenFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/eventBookingFragment"
+        android:name="com.example.moviebookingapp.fragment.EventBookingFragment"
+        android:label="fragment_event_booking"
+        tools:layout="@layout/fragment_event_booking" >
+        <action
+            android:id="@+id/action_eventBookingFragment_to_homeScreenFragment"
+            app:destination="@id/homeScreenFragment"
+            app:popUpTo="@id/homeScreenFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_eventBookingFragment_to_eventConfirmationScreenFragment"
+            app:destination="@id/eventConfirmationScreenFragment"
+            app:popUpTo="@id/homeScreenFragment" />
+        <action
+            android:id="@+id/action_eventBookingFragment_to_noInternetFragment"
+            app:destination="@id/noInternetFragment"
+            app:popUpTo="@id/eventBookingFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/eventConfirmationScreenFragment"
+        android:name="com.example.moviebookingapp.fragment.EventConfirmationScreenFragment"
+        android:label="fragment_event_confirmation_screen"
+        tools:layout="@layout/fragment_event_confirmation_screen" >
+        <action
+            android:id="@+id/action_eventConfirmationScreenFragment_to_homeScreenFragment"
+            app:destination="@id/homeScreenFragment"
+            app:popUpTo="@id/homeScreenFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.example.moviebookingapp.fragment.ProfileFragment"
+        android:label="fragment_profile"
+        tools:layout="@layout/fragment_profile" >
+        <action
+            android:id="@+id/action_profileFragment_to_homeScreenFragment"
+            app:destination="@id/homeScreenFragment"
+            app:popUpTo="@id/homeScreenFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/noInternetFragment"
+        android:name="com.example.moviebookingapp.fragment.NoInternetFragment"
+        android:label="fragment_no_internet"
+        tools:layout="@layout/fragment_no_internet" >
+        <action
+            android:id="@+id/action_noInternetFragment_to_homeScreenFragment"
+            app:destination="@id/homeScreenFragment"
+            app:popUpTo="@id/noInternetFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+</navigation>
